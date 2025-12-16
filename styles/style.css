@@ -1,16 +1,360 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--txt);
+}
+
+.header {
+  height: auto;
+  font-family: var(--accent-txt);
+}
+
+.footer {
+  margin-top: clamp(52px, 54.70px + -0.19vw, 54px);
+  min-inline-size: 375px;
+}
+
+.head-title {
+  height: clamp(327px, 100vh, 368px);
+  width: clamp(375px, 260.56px + 30.52vw, 700px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: clamp(100px, 102.49px + -0.13vw, 102px);
+  background-color: var(--white);
+  text-transform: uppercase;
+  font-weight: var(-title);
+  border: 2px solid var(--black);
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.html {
+  font-size: clamp(3.0625rem, 2.4847rem + 2.4653vw, 4.0625rem);
+  margin-top: clamp(120px, 118.06px + 0.52vw, 128px);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: auto;
+}
+
+.tag {
+  line-height: auto;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(0.875rem, 0.55rem + 1.3867vw, 1.4375rem);
+}
+
+.main {
+  width: clamp(375px, 260.56px + 30.52vw, 700px);
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
+
+.post {
+  position: relative;
+  margin-bottom: 52px;
+  background-color: var(--white);
+  border: 2px solid var(--black);
+}
+
+.title {
+  font-weight: var(--title);
+  border-bottom: 2px solid var(--black);
+  padding-left: 10px;
+  padding-top: 3px;
+  min-height: 31px;
+  max-height: 52px;
+}
+
+.text {
+  font-variation-settings: "wght" var(--card);
+  border-top: 2px solid var(--black);
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 21px;
+}
+
+.img {
+  width: clamp(371px, 256.55px + 30.52vw, 696px);
+  height: clamp(371px, 256.55px + 30.52vw, 696px);
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: 56px;
+  right: 25px;
+  font-family: var(--accent-txt);
+  font-size: 14px;
+  color: transparent;
+  background: transparent;
+  mix-blend-mode: hard-light;
+  pointer-events: var(--none);
+  z-index: 10;
+
+  -webkit-text-stroke: 1px var(--black);
+  text-stroke: 1px var(--black);
+
+  @supports not (-webkit-text-stroke: 1px var(--black)) {
+    text-shadow: 
+      -1px -1px 0 var(--black),
+       1px -1px 0 var(--black),
+      -1px  1px 0 var(--black),
+       1px  1px 0 var(--black);
+  }
+}
+
+.thoughts {
+  margin-top: 27px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+button {
+  outline: var(--none);
+  background: var(--white);
+  transition: border 0.3s ease;
+  font-size: 14px;
+  line-height: 90%;
+}
+
+.card__icon-button {
+  position: absolute;
+  outline: var(--none);
+  border: var(--none);
+  right: 167px;
+  bottom: 25px;
+  height: 38px;
+  width: 38px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.like-icon {
+  max-height: 38px;
+  max-width: 38px;
+}
+
+.card__like-button {
+  position: relative;
+  font-family: var(--accent-txt);
+  font-weight: var(--card);
+  color: var(--white);
+  margin-top: 25px;
+  margin-left: clamp(216px, 101.56px + 30.52vw, 541px);
+  margin-right: 25px;
+  width: 130px;
+  height: 38px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.card__like-button .button__text {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.card__like-button:hover::before {
+  transform: translateX(0);
+}
+
+button:focus {
+  box-shadow: var(--none);
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--black);
+  box-shadow: var(--none);
+}
+
+button:focus-visible {
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.memory {
+  position: relative;
+  font-family: var(--accent-txt);
+  font-weight: var(--card);
+  color: var(--white);
+  margin-bottom: clamp(102px, 100.94px + 0.28vw, 105px);
+  width: clamp(310px, 296.27px + 3.66vw, 349px);
+  height: clamp(55px, 94.21px + -2.72vw, 84px);
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 8px;
+}
+
+.memory .button__text {
+  bottom: clamp(15px, 13.77px + 0.33vw, 18.5px);
+  z-index: 2;
+  width: 266px;
+  height: 14px;
+  mix-blend-mode: difference;
+}
+
+.memory::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.memory:hover::before {
+  transform: translateX(0);
+}
+
+.floppy1 {
+  margin-left: 19px;
+  width: 21px;
+  height: 21px;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.nostalgia {
+  filter: contrast(1.5) saturate(0.3);
+}
+
+.clear {
+  filter: contrast(1.4) brightness(0.9) saturate(0.7);
+}
+
+.cold {
+  filter: hue-rotate(155deg) brightness(1.05);
+}
+
+.drama {
+  filter: sepia(0.8) brightness(1.1);
+}
+
+.warm {
+  filter: hue-rotate(-30deg) saturate(1.2);
+}
+
+.pov {
+  filter: invert(1);
+}
+
+.idk {
+  filter: contrast(0.75) brightness(0.4);
+}
+
+.gritty {
+  filter: blur(2px);
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+#dialog-id {
+  z-index: 2;
+}
+
+dialog:open {
+  display: grid;
+  width: clamp(341px, 336.77px + 1.13vw, 353px);
+  height: 191px;
+  grid-template-rows: 93px 98px;
+  gap: 30px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: clamp(89px, 105.23px + -1.13vw, 101px) clamp(198px, 185.32px + 3.38vw, 234px);
+  gap: 20px;
+}
+
+.floppy2 {
+  margin-top: 42px;
+  margin-left: auto;
+  width: 39px;
+  height: 39px;
+  z-index: 2;
+  fill: var(--white);
+  mix-blend-mode: difference;
+}
+
+.need {
+  text-transform: uppercase;
+  font-family: var(--accent-txt);
+  font-size: 14px;
+  height: 63px;
+  font-weight: var(--card);
+  margin-top: 30px;
+  line-height: 150%;
+}
+
+.ok {
+  position: relative;
+  padding: 0;
+  width: clamp(257px, 244.32px + 3.38vw, 293px);
+  height: 38px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.ok .button__text {
+  text-transform: uppercase;
+  font-family: var(--accent-txt);
+  font-size: 14px;
+  font-weight: var(--card);
+}
+
+@media (width <= 572px) {
+  .memory {
+    display: grid;
+    grid-template-rows: 43px 29px;
+  }
+
+  .floppy1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    height: 28px;
+    width: 28px;
+  }
+
+  .memory .button__text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  dialog:open {
+    height: 195px;
+  }
 }
