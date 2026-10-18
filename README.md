@@ -1,4 +1,5 @@
-https://github.com/Kazuto-git/zakrivayuschiy-teg-ad
-https://github.com/Kazuto-git/zakrivayuschiy-teg-ad
-https://github.com/Kazuto-git/zakrivayuschiy-teg-ad
-https://github.com/Kazuto-git/zakrivayuschiy-teg-ad
+# Закрывающий тег
+
+Практическое задание из онлайн-курса Яндекса «Фронтенд-разработчик».
+
+🔗 [Посмотреть на GitHub Pages](https://kazuto-git.github.io/zakrivayuschiy-teg-ad/)
