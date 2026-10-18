@@ -185,7 +185,7 @@
     </main>
 
     <footer class="footer">
-      <!-- Кнопка открытия: оставляем ваш dialog-id и добавляем точку с запятой -->
+      <!-- Кнопка открытия: строго dialog-id, в конце вызова обязательно ставим точку с запятой -->
       <button 
         class="memory" 
         type="button"
@@ -199,6 +199,7 @@
       </button>
     </footer>
 
+    <!-- ID диалога оставляем исходным (dialog-id) -->
     <dialog id="dialog-id">
       <div class="row">
         <svg class="floppy2">
@@ -207,18 +208,19 @@
         <span class="need">вставьте дискету, чтобы продолжить</span>
       </div>
       
-      <!-- Оборачиваем в форму со специальным методом dialog -->
+      <!-- Форма для нативного закрытия окна без перезагрузки -->
       <form method="dialog">
-        <!-- Меняем тип на submit и возвращаем onclick со старым ID -->
+        <!-- Кнопка ОK: тип submit, текст ОK/ОК (крупным шрифтом), и onclick со старым ID -->
         <button 
           class="ok" 
           type="submit" 
           onclick="window['dialog-id'].close();"
         >
-          <span class="button__text">ок</span>
+          <span class="button__text">ОК</span>
         </button>
       </form>
     </dialog>
+
 
 
     <script src="./scripts/like.js"></script>
