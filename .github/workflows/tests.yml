@@ -19,4 +19,4 @@ jobs:
       - name: Tests
         uses: Yandex-Practicum/test-project-action@v1
         with:
-          project: 'zakrivayuschiy-teg-ad'
+          project: 'zakrivayuschiy-teg-f'

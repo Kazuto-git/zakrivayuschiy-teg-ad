@@ -1,5 +1,2 @@
-# Закрывающий тег
-
-Практическое задание из онлайн-курса Яндекса «Фронтенд-разработчик».
-
-🔗 [Посмотреть на GitHub Pages](https://kazuto-git.github.io/zakrivayuschiy-teg-ad/)
+https://github.com/Art-rus/zakrivayuschiy-teg-f
+https://art-rus.github.io/zakrivayuschiy-teg-ad/

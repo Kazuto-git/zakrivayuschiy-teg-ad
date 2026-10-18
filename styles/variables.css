@@ -1,28 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --txt: 'Inter', system-ui, sans-serif;
-    --accent-txt: 'Press Start 2P';
-    --title: bold;
-    --card: 400;
-    --page-background: 
-    repeating-linear-gradient(
-      to right,
-      #d3d3d3 0px 2px,
-      transparent 2px 4px
+  --main-font: "Inter";
+  --accent-font: "PressStart2P";
+  --main-card-font-weight: 400;
+  --card-title-font-weight: 700;
+  --accent-color: #000;
+  --heart-contour-color: var(--accent-color);
+  --heart-fill-color: #ff0000;
+  --body-gradient: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
     ),
-    repeating-linear-gradient(
-      to bottom,
-      #d3d3d3 0px 2px,
-      transparent 2px 4px
-    ),
-    linear-gradient(
-      to bottom,
-      #e7e7e7 0%,
-      #e7e7e7 0.01%,
-      #1a1a1a 100%
-    );
-    --black: #000;
-    --white: #fff;
-    --red: #FF0000;
-    --none: none;
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
 }
