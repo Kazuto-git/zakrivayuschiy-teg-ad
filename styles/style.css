@@ -279,23 +279,22 @@ dialog::backdrop {
 }
 
 #dialog-id {
-  z-index: 2;
-}
-
-dialog:open {
-  display: grid;
   width: clamp(341px, 336.77px + 1.13vw, 353px);
   height: 191px;
-  grid-template-rows: 93px 98px;
-  gap: 30px;
   padding: 0;
   overflow: hidden;
+  border: 2px solid var(--black); /* если нужна рамка */
+  /* НЕ меняем display! Оставляем нативный */
 }
 
+/* Grid применяем к внутреннему контейнеру .row */
 .row {
   display: grid;
+  grid-template-rows: 93px 98px;  /* перенесли из dialog:open */
   grid-template-columns: clamp(89px, 105.23px + -1.13vw, 101px) clamp(198px, 185.32px + 3.38vw, 234px);
-  gap: 20px;
+  gap: 30px;  /* перенесли из dialog:open */
+  padding: 0;
+  height: 100%;
 }
 
 .floppy2 {
@@ -352,9 +351,5 @@ dialog:open {
   .memory .button__text {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  dialog:open {
-    height: 195px;
   }
 }
