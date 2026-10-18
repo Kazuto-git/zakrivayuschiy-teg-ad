@@ -185,41 +185,31 @@
     </main>
 
     <footer class="footer">
-      <!-- Кнопка открытия: строго dialog-id, в конце вызова обязательно ставим точку с запятой -->
-      <button 
-        class="memory" 
-        type="button"
-        onclick="window['dialog-id'].showModal();"
+      <button class="memory"
+        type="button" 
+        onclick="window['dialog-id'].showModal();" 
         aria-controls="dialog-id"
       >
-        <svg class="floppy1">
-          <use href="#floppy" />
-        </svg>
-        <span class="button__text">Сохранить на память</span>
+          <svg class="floppy1">
+            <use href="#floppy" />
+          </svg>
+          <span class="button__text">Сохранить на память</span>
       </button>
-    </footer>
-
-    <!-- ID диалога оставляем исходным (dialog-id) -->
-    <dialog id="dialog-id">
-      <div class="row">
-        <svg class="floppy2">
-          <use href="#floppy" />
-        </svg>
-        <span class="need">вставьте дискету, чтобы продолжить</span>
-      </div>
       
-      <!-- Форма для нативного закрытия окна без перезагрузки -->
-      <form method="dialog">
-        <!-- Кнопка ОK: тип submit, текст ОK/ОК (крупным шрифтом), и onclick со старым ID -->
-        <button 
-          class="ok" 
-          type="submit" 
-          onclick="window['dialog-id'].close();"
-        >
+      <dialog id="dialog-id">
+        <div class="row">
+          <svg class="floppy2">
+            <use href="#floppy" />
+          </svg>
+          <span class="need">вставьте дискету, чтобы продолжить</span>
+        </div>
+        
+        <button class="ok" type="button" onclick="window['dialog-id'].close();">
           <span class="button__text">ОК</span>
         </button>
-      </form>
-    </dialog>
+        
+      </dialog>
+    </footer>
 
 
 
