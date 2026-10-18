@@ -184,10 +184,11 @@
       </section>
     </main>
     <footer class="footer">
+      <!-- Кнопка открытия: добавляем event.preventDefault() -->
       <button 
         class="memory" 
         type="button"
-        onclick="window['dialog'].showModal();"
+        onclick="event.preventDefault(); window['dialog'].showModal();"
         aria-controls="dialog"
       >
         <svg class="floppy1">
@@ -197,7 +198,7 @@
       </button>
     </footer>
 
-    <!-- Изменили id с "dialog-id" на "dialog", чтобы убрать дефис -->
+    <!-- ID строго "dialog" без дефисов -->
     <dialog id="dialog">
       <div class="row">
         <svg class="floppy2">
@@ -206,13 +207,16 @@
         <span class="need">вставьте дискету, чтобы продолжить</span>
       </div>
       
-      <!-- Обернули кнопку в форму с method="dialog", тип кнопки меняем на submit -->
-      <form method="dialog">
-        <button class="ok" type="submit">
-          <span class="button__text">ок</span>
-        </button>
-      </form>
+      <!-- Кнопка закрытия: тип "button", вызываем close() и принудительно гасим событие -->
+      <button 
+        class="ok" 
+        type="button" 
+        onclick="event.preventDefault(); window['dialog'].close();"
+      >
+        <span class="button__text">ок</span>
+      </button>
     </dialog>
+
     <script src="./scripts/like.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: var(--none);">
       <symbol id="floppy" viewBox="0 0 39 39">
