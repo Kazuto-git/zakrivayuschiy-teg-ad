@@ -184,33 +184,35 @@
       </section>
     </main>
     <footer class="footer">
-      <button class="memory"
-        type="button" 
-        onclick="window['dialog-id'].showModal();" 
-        aria-controls="dialog-id"
+      <button 
+        class="memory" 
+        type="button"
+        onclick="window['dialog'].showModal();"
+        aria-controls="dialog"
       >
-          <svg class="floppy1">
-            <use href="#floppy" />
-          </svg>
-          <span class="button__text">Сохранить на память</span>
+        <svg class="floppy1">
+          <use href="#floppy" />
+        </svg>
+        <span class="button__text">Сохранить на память</span>
       </button>
-      
-      <dialog id="dialog-id">
-        <div class="row">
-          <svg class="floppy2">
-            <use href="#floppy" />
-          </svg>
-          <span class="need">вставьте дискету, чтобы продолжить</span>
-        </div>
-        
-        <form method="dialog">
-          <button class="ok" type="submit">
-            <span class="button__text">ок</span>
-          </button>
-        </form>
-        
-      </dialog>
     </footer>
+
+    <!-- Изменили id с "dialog-id" на "dialog", чтобы убрать дефис -->
+    <dialog id="dialog">
+      <div class="row">
+        <svg class="floppy2">
+          <use href="#floppy" />
+        </svg>
+        <span class="need">вставьте дискету, чтобы продолжить</span>
+      </div>
+      
+      <!-- Обернули кнопку в форму с method="dialog", тип кнопки меняем на submit -->
+      <form method="dialog">
+        <button class="ok" type="submit">
+          <span class="button__text">ок</span>
+        </button>
+      </form>
+    </dialog>
     <script src="./scripts/like.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: var(--none);">
       <symbol id="floppy" viewBox="0 0 39 39">
