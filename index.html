@@ -183,13 +183,14 @@
         </div>
       </section>
     </main>
+
     <footer class="footer">
-      <!-- Кнопка открытия: добавляем event.preventDefault() -->
+      <!-- Кнопка открытия: оставляем ваш dialog-id и добавляем точку с запятой -->
       <button 
         class="memory" 
         type="button"
-        onclick="event.preventDefault(); window['dialog'].showModal();"
-        aria-controls="dialog"
+        onclick="window['dialog-id'].showModal();"
+        aria-controls="dialog-id"
       >
         <svg class="floppy1">
           <use href="#floppy" />
@@ -198,8 +199,7 @@
       </button>
     </footer>
 
-    <!-- ID строго "dialog" без дефисов -->
-    <dialog id="dialog">
+    <dialog id="dialog-id">
       <div class="row">
         <svg class="floppy2">
           <use href="#floppy" />
@@ -207,15 +207,19 @@
         <span class="need">вставьте дискету, чтобы продолжить</span>
       </div>
       
-      <!-- Кнопка закрытия: тип "button", вызываем close() и принудительно гасим событие -->
-      <button 
-        class="ok" 
-        type="button" 
-        onclick="event.preventDefault(); window['dialog'].close();"
-      >
-        <span class="button__text">ок</span>
-      </button>
+      <!-- Оборачиваем в форму со специальным методом dialog -->
+      <form method="dialog">
+        <!-- Меняем тип на submit и возвращаем onclick со старым ID -->
+        <button 
+          class="ok" 
+          type="submit" 
+          onclick="window['dialog-id'].close();"
+        >
+          <span class="button__text">ок</span>
+        </button>
+      </form>
     </dialog>
+
 
     <script src="./scripts/like.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: var(--none);">
